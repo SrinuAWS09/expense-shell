@@ -49,5 +49,5 @@ VALIDATE $? "star the mysql server"
     VALIDATE $? "Setting the root password"
  else
     echo -e " MYSQL server password setup is already completed...$Y SKIPPING.. $N"
-
+fi
 VALIDATE $? "Setting Root password"
