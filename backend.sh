@@ -50,7 +50,7 @@ VALIDATE $? "Unzip files"
 cd /app
 npm install &>>$LOG_FILE_NAME
 VALIDATE $? "NPM installed"
-cp /home/ec2-user/expense-shell/backend.service etc/systemd/system/backend.service &>>$LOG_FILE_NAME
+cp /home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.service &>>$LOG_FILE_NAME
 VALIDATE $? "Copied"
 systemctl daemon-reload &>>$LOG_FILE_NAME
 VALIDATE $? "Daemon is reloaded"
