@@ -69,7 +69,7 @@ systemctl enable backend &>>$LOG_FILE_NAME
 VALIDATE $? "enabled backend"
 dnf install mysql -y &>>$LOG_FILE_NAME
 VALIDATE $? "Installed mysql "
-mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$LOG_FILE_NAME
+mysql -h mysql.daws82srinu.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$LOG_FILE_NAME
 VALIDATE $? "mysql validation"
 systemctl restart backend &>>$LOG_FILE_NAME
 VALIDATE $? "restart backend"
