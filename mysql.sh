@@ -48,6 +48,6 @@ VALIDATE $? "star the mysql server"
     mysql_secure_installation --set-root-pass ExpenseApp@1
     VALIDATE $? "Setting the root password"
  else
-    echo -e" MYSQL server password setup is already completed...$Y SKIPPING.. $N"
+    echo -e " MYSQL server password setup is already completed...$Y SKIPPING.. $N"
 
 VALIDATE $? "Setting Root password"
