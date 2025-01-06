@@ -29,6 +29,10 @@ then
 fi
 }
 
+echo "Script started here:$TIMESTAMP" &>>$LOG_FILE_NAME
+
+CHECK_ROOT
+
 dnf install mysql-server -y &>>$LOG_FILE_NAME
 VALIDATE $? "Installing mysql server"
 systemctl enable mysqld &>>$LOG_FILE_NAME
