@@ -39,6 +39,7 @@ dnf module enable nodejs:20 -y &>>$LOG_FILE_NAME
 VALIDATE $? "enable nodejs"
 dnf install nodejs -y &>>$LOG_FILE_NAME
 VALIDATE $? "Install nodejs"
+
 id expense &>>$LOG_FILE_NAME
 if [ $? -ne 0]
 then 
@@ -47,7 +48,8 @@ then
 else 
    echo "User is already there"
 fi
-mkdir /app &>>$LOG_FILE_NAME
+
+mkdir -p /app &>>$LOG_FILE_NAME
 VALIDATE $? " Creating Directory"
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
 cd /app
