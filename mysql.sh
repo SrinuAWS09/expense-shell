@@ -40,14 +40,13 @@ VALIDATE $? "Enableing my sql server"
 systemctl start mysqld &>>$LOG_FILE_NAME
 VALIDATE $? "star the mysql server" 
 
- mysql -h daws82srinu.online -u root -pExpenseApp@1 -e 'show databases;'
+ mysql -h daws82srinu.online -u root -pExpenseApp@1 -e 'show databases;' &>>$LOG_FILE_NAME
 
  if [ $? ne 0 ]
  then
     echo " MYSQL server password is not setup " &>>$LOG_FILE_NAME
-    mysql_secure_installation --set-root-pass ExpenseApp@1
+    mysql_secure_installation --set-root-pass ExpenseApp@1 
     VALIDATE $? "Setting the root password"
  else
     echo -e " MYSQL server password setup is already completed...$Y SKIPPING.. $N"
 fi
-VALIDATE $? "Setting Root password"
