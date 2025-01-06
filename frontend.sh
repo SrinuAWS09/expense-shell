@@ -29,7 +29,7 @@ then
 fi
 }
 
-mkdir -p $LOG_FOLDER
+mkdir -p /var/log/expense-logs
 echo "Script started here:$TIMESTAMP" &>>$LOG_FILE_NAME
 
 CHECK_ROOT
