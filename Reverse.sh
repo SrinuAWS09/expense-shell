@@ -6,6 +6,9 @@ read filename
 
 if [ -f "$filename" ]; 
 then
+  A= $(head -n1 "$filename")
+  echo "A data is : $A"
+
   cols=$(head -n1 "$filename" | wc -w)
   echo " cols data is: $cols"
   for ((i = 1; i <= cols; i++)); do
