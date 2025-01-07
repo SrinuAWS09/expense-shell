@@ -6,13 +6,12 @@ read filename
 
 if [ -f "$filename" ]; 
 then
-  A= $(head -n1 "$filename")
-  echo "A data is : $A"
 
   cols=$(head -n1 "$filename" | wc -w)
   echo " cols data is: $cols"
   for ((i = 1; i <= cols; i++)); do
-    cut -d' ' -f"$i" "$filename" | paste -sd' ' -
+    data=$(cut -d' ' -f"$i" "$filename" | paste -sd' ' -)
+    echo " data is : $data"
   done
 else
   echo "File does not exist."
