@@ -7,7 +7,7 @@ read filename
 if [ -f "$filename" ]; 
 then
 
-  
+  cols=$(head -n1 "$filename" | wc -w)
   for ((i = 1; i <= cols; i++));
    do
  
