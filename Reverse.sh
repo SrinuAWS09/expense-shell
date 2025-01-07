@@ -10,6 +10,8 @@ then
   cols=$(head -n1 "$filename" | wc -w)
   echo " cols data is: $cols"
   for ((i = 1; i <= cols; i++)); do
+  data2=$(cut -d' ')
+  echo "data2 is :$data2"
   data1=$(cut -d' ' -f"$i" "$filename")
   echo "data 1 is : $data1"
     data=$(cut -d' ' -f"$i" "$filename" | paste -sd' ' -)
